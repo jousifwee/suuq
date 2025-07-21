@@ -10,6 +10,7 @@
 
 ```bash
 docker-compose up
+```
 
 ## Sonstiges
 ### Rest Aufrufe mit dem VS Code RestClient
