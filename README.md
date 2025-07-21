@@ -10,3 +10,16 @@
 
 ```bash
 docker-compose up
+
+## Sonstiges
+### Rest Aufrufe mit dem VS Code RestClient
+- REST-CALLS.http
+
+### die GUI
+- frontend
+- starten
+```
+cd frontend
+ng serve
+```
+
