@@ -6,8 +6,8 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-angebot-seite',
   imports: [ CommonModule, FormsModule],
-  templateUrl: './angebot-seite.html',
-  styleUrl: './angebot-seite.scss'
+  templateUrl: 'angebot-seite.component.html',
+  styleUrl: 'angebot-seite.component.scss'
 })
 export class AngebotSeite {
  private http = inject(HttpClient);

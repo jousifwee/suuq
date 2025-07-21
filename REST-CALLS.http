@@ -22,3 +22,83 @@ Accept: application/json
 ### Filter: Angebote unter 500 Euro
 GET http://localhost:3000/angebot?preis=lt.500
 Accept: application/json
+
+### Alle Artikel abrufen
+GET http://localhost:3000/artikel
+Accept: application/json
+
+### Alle Artikel+angebote abrufen
+GET http://localhost:3000/artikel_angebote
+Accept: application/json
+
+###
+
+### post /artikel ohne Response
+
+POST http://localhost:3000/artikel
+Content-Type: application/json
+
+
+  {
+    "titel": "Bücherregal2",
+    "beschreibung": "Ein schönes Regal",
+    "anbieter_id": "1",
+    "preis_vorschlag": 50,
+    "status": "offen"
+  }
+
+
+
+### post /artikel
+
+POST http://localhost:3000/artikel
+Prefer: return=representation
+Content-Type: application/json
+
+{
+    "titel": "Bücherregal3",
+    "beschreibung": "Ein schönes Regal",
+    "anbieter_id": "1",
+    "preis_vorschlag": 50,
+    "status": "offen"
+  }
+
+
+### post /artikel
+
+POST http://localhost:3000/artikel
+Prefer: return=headers-only
+Content-Type: application/json
+
+{
+    "titel": "Bücherregal3",
+    "beschreibung": "Ein schönes Regal",
+    "anbieter_id": "1",
+    "preis_vorschlag": 50,
+    "status": "offen"
+  }
+
+
+
+### post /artikel
+
+POST http://localhost:3000/artikel
+Prefer: return=representation
+Content-Type: application/json
+
+[
+  {
+    "titel": "Bücherregal2",
+    "beschreibung": "Ein schönes Regal",
+    "anbieter_id": 1,
+    "preis_vorschlag": 50,
+    "status": "offen"
+  },
+  {
+    "titel": "Esstisch",
+    "beschreibung": "Großer Holztisch",
+    "anbieter_id": 1,
+    "preis_vorschlag": 120,
+    "status": "offen"
+  }
+]
