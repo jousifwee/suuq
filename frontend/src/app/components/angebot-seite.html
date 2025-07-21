@@ -1,0 +1,18 @@
+ <h1>Artikel & Angebote</h1>
+    <div *ngFor="let artikel of artikelListe()">
+      <h3>{{ artikel.titel }} ({{ artikel.status }})</h3>
+      <p>{{ artikel.beschreibung }}</p>
+      <p>Preisvorschlag: {{ artikel.preis_vorschlag }} €</p>
+      
+      <ul>
+        <li *ngFor="let angebot of artikel.angebote">
+          Angebot: {{ angebot.betrag }} € ({{ angebot.erstellt_am | date:'short' }})
+        </li>
+      </ul>
+      <form (ngSubmit)="neuesAngebot(artikel)">
+        <input type="number" step="0.01" [(ngModel)]="neueBetrag[artikel.id]" 
+               name="betrag{{artikel.id}}" placeholder="Neues Angebot" required>
+        <button type="submit">Bieten</button>
+      </form>
+      <hr>
+    </div>

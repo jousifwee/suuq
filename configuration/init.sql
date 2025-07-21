@@ -4,8 +4,18 @@ create schema if not exists suuq;
 -- Schema aktiv setzen
 set search_path to suuq;
 
--- Rolle für PostgREST (unverändert)
-create role anon nologin;
+--create or replace view openapi as
+--select * from pgrst.openapi_definition();
+
+-- Rolle für PostgREST
+-- Rolle anlegen, falls nicht vorhanden
+do $$
+begin
+   if not exists (select from pg_roles where rolname = 'web_anon') then
+      create role web_anon nologin;
+   end if;
+end
+$$;
 
 -- Tabelle artikel
 create table artikel (
@@ -73,7 +83,23 @@ left join angebot b on a.id = b.artikel_id
 group by a.id;
 
 -- Rechte für PostgREST
-grant usage on schema suuq to anon;
-grant select, insert on artikel to anon;
-grant select, insert on angebot to anon;
-grant select on artikel_angebote to anon;
+-- Schema-Rechte
+GRANT USAGE ON SCHEMA suuq TO web_anon;
+
+-- Bestehende Objekte
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA suuq TO web_anon;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA suuq TO web_anon;
+GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA suuq TO web_anon;
+
+-- Default-Rechte für zukünftige Objekte
+ALTER DEFAULT PRIVILEGES IN SCHEMA suuq
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO web_anon;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA suuq
+GRANT USAGE, SELECT ON SEQUENCES TO web_anon;
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA suuq
+GRANT EXECUTE ON FUNCTIONS TO web_anon;
+
+
+ALTER ROLE postgres SET search_path TO suuq, public;

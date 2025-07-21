@@ -240,3 +240,92 @@ export class AngebotPage {
 | Angular-Frontend mit Biet-Funktion | ✅ |
 | Trigger für Preislogik | ✅ |
 | Multiuser vorbereitet (Keycloak folgt) | ✅ |
+
+# 🔍 Warum PostgREST?
+
+## Motivation
+
+Traditionelle Webanwendungen verwenden oft ein klassisches Backend-Setup:
+
+- Datenbank (z. B. PostgreSQL)
+- Backend-Server (z. B. Spring Boot, Node.js, Laravel)
+- API-Logik in der Programmiersprache des Backends
+
+Das führt zu:
+
+- Doppelter Pflege von Datenbank- und API-Logik
+- Viel Boilerplate-Code für CRUD-Operationen
+- Hoher Aufwand für einfache REST-Schnittstellen
+
+### Mit PostgREST:
+
+- **SQL = API**: Datenbanktabellen werden automatisch als REST-API verfügbar gemacht
+- **Weniger Code**: Kein eigener Backend-Code für CRUD notwendig
+- **Schnelle Entwicklung**: Ideal für Prototypen, Admin-Interfaces oder datengetriebene Anwendungen
+- **Standardisierte OpenAPI-Dokumentation**: Automatisch generiert
+- **Hochperformant**: PostgREST ist in Haskell geschrieben und sehr schnell
+
+## Was ist PostgREST?
+
+PostgREST ist ein **serverseitiger HTTP-Server**, der direkt auf PostgreSQL-Datenbanken aufsetzt.
+Es generiert automatisch eine vollständige REST-API aus den Tabellen, Views und Funktionen der Datenbank.
+
+### Prinzip:
+
+| Datenbankobjekt | REST-Endpunkt |
+|---|---|
+| Tabelle `artikel` | `GET /artikel`, `POST /artikel` |
+| View `artikel_angebote` | `GET /artikel_angebote` |
+| Funktion `check_angebot_hoechstgebot` | Als RPC-Endpoint nutzbar |
+
+## Vorteile von PostgREST
+
+| Vorteil | Beschreibung |
+|---|---|
+| **Einfachheit** | Keine eigene API-Implementierung notwendig |
+| **Sicherheit** | Zugriff über SQL-`GRANT`-Befehle steuerbar |
+| **OpenAPI** | Automatische Dokumentation |
+| **SQL-nahe Entwicklung** | Logik bleibt in der Datenbank |
+| **Skalierbar & schnell** | Optimiert für PostgreSQL-JSON-Ausgabe |
+
+## Einschränkungen
+
+| Punkt | Beschreibung |
+|---|---|
+| Kein Session-Management | Nur JWT-basierte Authentifizierung |
+| Keine komplexe API-Logik im Server | Logik muss in Views, Funktionen oder Triggern abgebildet werden |
+| Kein UI | Nur API, kein Webinterface |
+
+# 🔮 Ausblick: Folgende Schritte in der Schulung
+
+## Schritt 2: Authentifizierung mit Keycloak
+
+- Integration von Keycloak als Identity Provider
+- Übergabe des JWT-Tokens an PostgREST
+- Unterschiedliche Rollen und Rechte per JWT-Claim
+
+## Schritt 3: Row-Level-Security (RLS)
+
+- PostgreSQL Row-Level-Security aktivieren
+- Filterung der Datenbankzugriffe je nach Benutzerkontext
+- Sicherheit direkt auf Datenbankebene
+
+## Schritt 4: Erweiterte Datenbanklogik
+
+- Nutzung von PostgreSQL-Funktionen (RPC) als API-Methoden
+- Business-Logik in SQL kapseln
+- Komplexe Aktionen wie Mehrfach-Updates oder Berechnungen als RPC-Calls
+
+## Schritt 5: Admin-Interface und Benutzeroberfläche
+
+- Angular-Admin-Oberfläche erweitern
+- Dynamische API-Erkundung mit Swagger UI / ReDoc
+- Weitere Frontend-Module für Admin-Funktionalität
+
+## Schritt 6: Deployment & Best Practices
+
+- Docker-Deployment für Produktion
+- Sicherheitsaspekte (CORS, TLS, Rate-Limiting)
+- Versionierung der API
+- Fehlerbehandlung und Monitoring
+

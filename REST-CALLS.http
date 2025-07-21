@@ -1,0 +1,24 @@
+Aufruf	Ergebnis
+GET /	OpenAPI JSON (bei ignore-privileges) ✅
+GET /openapi	404 Not Found (nur in follow-privileges verfügbar) ❌
+
+### OpenAPI Doku abrufen (Root-URL, weil openapi-mode=ignore-privileges)
+GET http://localhost:3000/
+Accept: application/openapi+json
+
+
+### Alle Angebote abrufen
+GET http://localhost:3000/angebot
+Accept: application/json
+
+###
+
+### Ein einzelnes Angebot abrufen (id=1)
+GET http://localhost:3000/angebot?id=eq.1
+Accept: application/json
+
+###
+
+### Filter: Angebote unter 500 Euro
+GET http://localhost:3000/angebot?preis=lt.500
+Accept: application/json
