@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { firstValueFrom } from 'rxjs';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 @Component({
   selector: 'app-angebot-seite-step1',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, MatSlideToggleModule],
   templateUrl: './angebot-seite-step1.html',
   styles: ''
 })

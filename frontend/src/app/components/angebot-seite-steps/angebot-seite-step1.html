@@ -1,5 +1,28 @@
 <h1>HTTP REST Response von /artikel</h1>
-<h1>Wir nutzen Interpolation </h1>
+
+ChatGPT:<br>
+Das geht in Angular NICHT direkt!<br>
+Ein HTTP-Request ist technisch IMMER asynchron, da er im Hintergrund ausgeführt wird.<br>
+Das gilt für alle modernen Browser, JavaScript, TypeScript & Angular.<br>
+Du kannst niemals synchron auf das Ergebnis eines HTTP-Requests warten – das verbietet die Architektur des Browsers und
+von Angular.<br>
+<br>
+Warum?<br>
+Der Browser friert sofort ein, wenn Netzwerk-Operationen synchron laufen würden (Deshalb gibt’s das nicht mehr!).<br>
+
+Alle Netzwerk-Requests laufen immer asynchron ab – du bekommst immer ein Observable (Angular) oder Promise (JS).
+
+<h2>http get Quick & dirty: </h2>
+
+<pre ngNonBindable>
+  async ladeDaten() &#123;
+    const result = await firstValueFrom(
+      this.http.get&lt;string&gt;('http://localhost:3000/artikel')
+    );
+    this.artikelListe = result;
+  &#125;
+</pre>
+<h1>Wir nutzen zur anzeige der Bariablen im Modul hier Interpolation </h1>
 <h2 ngNonBindable>{{artikelListe}} --></h2>
 <div>
     <p>
@@ -15,25 +38,4 @@
 <h1>Einfachster HTTP Request</h1>
 <h2>ich möchte synchron den string des http get abfragen</h2>
 
-ChatGPT:<br>
-Das geht in Angular NICHT direkt!<br>
-Ein HTTP-Request ist technisch IMMER asynchron, da er im Hintergrund ausgeführt wird.<br>
-Das gilt für alle modernen Browser, JavaScript, TypeScript & Angular.<br>
-Du kannst niemals synchron auf das Ergebnis eines HTTP-Requests warten – das verbietet die Architektur des Browsers und
-von Angular.<br>
-<br>
-Warum?<br>
-Der Browser friert sofort ein, wenn Netzwerk-Operationen synchron laufen würden (Deshalb gibt’s das nicht mehr!).<br>
-
-Alle Netzwerk-Requests laufen immer asynchron ab – du bekommst immer ein Observable (Angular) oder Promise (JS).
-
-<h2>Quick & dirty: </h2>
-<pre ngNonBindable>
-
-  async ladeDaten()
-    const result = await firstValueFrom(
-      this.http.get&lt;string&gt;('http://localhost:3000/artikel')
-    );
-    this.artikelListe = result;
-
-</pre>
+<mat-slide-toggle>Toggle me!</mat-slide-toggle>
