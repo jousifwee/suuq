@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet} from '@angular/router';
-import { AngebotSeite } from "./components/angebot-seite.component/angebot-seite.component";
+import { MatSidenavContainer, MatSidenav, MatSidenavContent} from '@angular/material/sidenav';
+import { MatNavList } from '@angular/material/list';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterModule],
+  imports: [RouterOutlet, RouterModule, MatSidenavContainer, MatSidenav, MatSidenavContent, MatNavList, MatButton],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
