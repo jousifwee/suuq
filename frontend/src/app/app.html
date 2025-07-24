@@ -1,12 +1,16 @@
 <!-- Creates a layout with a left-positioned sidenav and explicit content. -->
 <mat-sidenav-container>
   <mat-sidenav #left mode="side" opened>
-    <h4>Angular Material Sidenav</h4>
-    <mat-nav-list >
-<div style="display: flex; flex-direction: column; padding: 1rem; gap: 0.5rem;">
-  <a mat-button   routerLinkActive="active-button"  [routerLinkActiveOptions]="{ exact: true }" routerLink="/">Home</a>
-  <a mat-button   routerLinkActive="active-button"  [routerLinkActiveOptions]="{ exact: true }"routerLink="/step1">step1</a>
-</div>
+    <mat-toolbar color="primary" class="sidenav-toolbar" style="justify-content: center;">
+      <mat-icon>menu</mat-icon>&nbsp;Angular Material Sidenav
+    </mat-toolbar>
+    <mat-nav-list>
+      <div style="display: flex; flex-direction: column; padding: 1rem; gap: 0.5rem;">
+        <a mat-button routerLinkActive="active-button" [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="/home">Home</a>
+       <a mat-button routerLinkActive="active-button" [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="/step1">Step 1</a>
+      </div>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -14,6 +18,6 @@
     <p>This is the main content area.</p>
     <p>Use the sidenav to navigate through the app.</p>
     <router-outlet />
-</mat-sidenav-content>
+  </mat-sidenav-content>
 
 </mat-sidenav-container>

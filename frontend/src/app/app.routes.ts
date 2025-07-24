@@ -3,6 +3,7 @@ import { AngebotSeite } from './components/angebot-seite.component/angebot-seite
 import { AngebotSeiteStep1 } from './components/angebot-seite-steps/angebot-seite-step1';
 
 export const routes: Routes = [
-    { path: '', component: AngebotSeite },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: AngebotSeite },
     { path: 'step1', component: AngebotSeiteStep1}
 ];

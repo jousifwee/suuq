@@ -1,4 +1,4 @@
-name: DockerSuuq
+ name: DockerSuuq
 
 services:
   db:

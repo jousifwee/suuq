@@ -41,3 +41,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
 }
+a.mat-button.active-button {
+  background-color: #1976d2 !important; /* Primärfarbe von Material, kann angepasst werden */
+  color: #fff !important;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
