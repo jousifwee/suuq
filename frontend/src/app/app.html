@@ -1,6 +1,6 @@
 <!-- Creates a layout with a left-positioned sidenav and explicit content. -->
 <mat-sidenav-container>
-  <mat-sidenav   mode="side" role="navigation" opened>
+  <mat-sidenav mode="side" role="navigation" opened>
     <mat-toolbar color="primary" class="sidenav-toolbar" style="justify-content: center;">
       <mat-icon>menu</mat-icon>&nbsp;Angular Material Sidenav
     </mat-toolbar>
@@ -11,11 +11,13 @@
         routerLink="/step1">Schritt 1 - nur ein Request - anzeige als JSON</a>
       <a mat-list-item routerLinkActive="active-button" [routerLinkActiveOptions]="{ exact: true }"
         routerLink="/step2">Schritt 2 - nur ein Request - response als String</a>
+      <a mat-list-item routerLinkActive="active-button" [routerLinkActiveOptions]="{ exact: true }"
+        routerLink="/step3">Schritt 3- Asynchron Handling </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <h1>مرحبا بكم في السوق</h1>
-    <p>ًWillkommen auf dem  Markt</p>
+    <p>ًWillkommen auf dem Markt</p>
     <router-outlet />
   </mat-sidenav-content>
 
