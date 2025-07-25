@@ -19,10 +19,12 @@ export class AngebotSeiteStep3 {
   }
 
 
+
   ladeDaten() {
     this.http.get<any[]>('http://localhost:3000/artikel').subscribe(data => {
-      this.artikelListe=data;
+      this.artikelListe = data;
     });
+  
   }
 
     typeOf(obj: any): string {

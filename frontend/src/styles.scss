@@ -48,3 +48,17 @@ a.mat-button.active-button {
   border-radius: 4px;
   transition: background 0.2s;
 }
+
+
+.artikel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.artikel-card {
+  width: 100%;
+}

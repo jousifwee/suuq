@@ -2,18 +2,19 @@
 <h4> HTTP Request mir Ascnchron Handling</h4>
 
 
-<h2>http get Quick & dirty: </h2>
+<h2>http get Async: </h2>
 
 <pre ngNonBindable>
-  async ladeDaten() &#123;
-    const result = await firstValueFrom(
-      this.http.get('http://localhost:3000/artikel', &#123; responseType: 'text' &#125;)
-    );
-    this.artikelListe = result;
-  &#125;
+
+  artikelListe: any[] = [];
+
+  ladeDaten() &#123;
+     this.http.get&lt;any[]&gt;('http://localhost:3000/artikel').subscribe(data =&gt; &#123;
+      this.artikelListe = data;
+      &#125;);
 </pre>
-<h1>Wir nutzen zur anzeige der Variablen im Modul hier Interpolation </h1>
-<h2 ngNonBindable>{{artikelListe}} --></h2>
+<h3>Wir nutzen zur anzeige der Variablen im Modul hier Interpolation </h3>
+<h4 ngNonBindable>{{artikelListe}} --></h4>
 <div>
     <p>
         {{artikelListe}}
@@ -21,3 +22,8 @@
     <h2 ngNonBindable>{{deepTypeOf(artikelListe)}} --> </h2>
     <p>{{deepTypeOf(artikelListe)}}</p>
 </div>
+<h2 ngNonBindable>{{artikelListe | json}}  --> </h2>
+<pre>
+{{artikelListe | json}}
+</pre>
+

@@ -1,5 +1,4 @@
- name: DockerSuuq
-
+name: DockerSuuq
 services:
   db:
     image: postgres:16-alpine
@@ -32,3 +31,10 @@ services:
       PGRST_DB_ANON_ROLE: web_anon
       PGRST_OPENAPI_MODE: ignore-privileges
       PGRST_LOG_LEVEL: debug
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    container_name: swagger-ui
+    ports:
+      - "8246:8080"
+    environment:
+      SWAGGER_JSON: http://localhost:3000/

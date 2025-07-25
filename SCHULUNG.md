@@ -134,9 +134,9 @@ services:
 ## 8️⃣ OpenAPI
 
 - OpenAPI-Dokumentation verfügbar unter:  
-  `http://localhost:3000/openapi`
+  `http://localhost:3000`
 - Modus: **follow-privileges** (nur dokumentiert, was freigegeben ist)
-
+  `http://localhost:3000/iopenap`
 ## 9️⃣ Angular Frontend
 
 ### `angebot-page.ts`

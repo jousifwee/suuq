@@ -31,7 +31,7 @@ create table artikel (
 -- Tabelle angebot
 create table angebot (
     id serial primary key,
-    artikel_id integer references artikel(id),
+    artikel_id integer references artikel(id) on DELETE CASCADE ,
     bietender_id varchar not null,
     betrag numeric(10,2) not null check (betrag >= 0),
     erstellt_am timestamptz default now()
@@ -47,7 +47,7 @@ begin
 
     if max_betrag > 0 then
         if new.betrag < max_betrag + 0.5 then
-            raise exception 'Neues Angebot (%s) muss mindestens 50 Cent über dem bisherigen Höchstgebot (%s) liegen.', new.betrag, max_betrag;
+            raise exception 'WARN-00003 Neues Angebot (%s) muss mindestens 50 Cent über dem bisherigen Höchstgebot (%s) liegen.', new.betrag, max_betrag;
         end if;
     else
         if new.betrag < 0.5 then

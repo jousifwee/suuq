@@ -1,0 +1,45 @@
+<h3>HTTP REST Response von /artikel</h3>
+<h4> HTTP Request mir Ascnchron Handling</h4>
+
+
+<h2>http get asynchron mit Subscribe: </h2>
+<pre ngNonBindable>
+
+  artikelListe: any[] = [];
+
+  ladeDaten() &#123;
+     this.http.get&lt;any[]&gt;('http://localhost:3000/artikel').subscribe(data =&gt; &#123;
+      this.artikelListe = data;
+      &#125;);
+</pre>
+
+
+
+<h2>Artikelübersicht</h2>
+
+<div *ngFor="let artikel of artikelListe">
+  <h3>{{ artikel.titel }}</h3>
+  <p><strong>Beschreibung:</strong> {{ artikel.beschreibung }}</p>
+  <p><strong>Preisvorschlag:</strong> {{ artikel.preis_vorschlag }} €</p>
+  <p><strong>Status:</strong> {{ artikel.status }}</p>
+  <p><strong>Angelegt am:</strong> {{ artikel.angelegt_am | date:'short' }}</p>
+  <hr>
+</div>
+
+
+<h2>Artikelübersicht Material</h2>
+<div class="artikel-grid">
+  <mat-card *ngFor="let artikel of artikelListe" class="artikel-card">
+    <mat-card-header>
+      <mat-card-title>{{ artikel.titel }}</mat-card-title>
+      <mat-card-subtitle>Status: {{ artikel.status }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p><strong>Beschreibung:</strong> {{ artikel.beschreibung }}</p>
+      <p><strong>Preisvorschlag:</strong> {{ artikel.preis_vorschlag }} €</p>
+      <p><strong>Angelegt am:</strong> {{ artikel.angelegt_am | date:'short' }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+

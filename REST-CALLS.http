@@ -3,13 +3,9 @@ GET /	OpenAPI JSON (bei ignore-privileges) ✅
 GET /openapi	404 Not Found (nur in follow-privileges verfügbar) ❌
 
 ### OpenAPI Doku abrufen (Root-URL, weil openapi-mode=ignore-privileges)
-GET http://localhost:3000/
+###### 
+GET http://localhost:3000/ 
 Accept: application/openapi+json
-
-
-### Alle Angebote abrufen
-GET http://localhost:3000/angebot
-Accept: application/json
 
 ###
 
@@ -71,10 +67,10 @@ Prefer: return=headers-only
 Content-Type: application/json
 
 {
-    "titel": "Bücherregal3",
+    "titel": "Bücherregal4",
     "beschreibung": "Ein schönes Regal",
     "anbieter_id": "1",
-    "preis_vorschlag": 50,
+    "preis_vorschlag": 500000,
     "status": "offen"
   }
 
@@ -88,14 +84,14 @@ Content-Type: application/json
 
 [
   {
-    "titel": "Bücherregal2",
+    "titel": "Bücherregalx",
     "beschreibung": "Ein schönes Regal",
     "anbieter_id": 1,
     "preis_vorschlag": 50,
     "status": "offen"
   },
   {
-    "titel": "Esstisch",
+    "titel": "Esstischy",
     "beschreibung": "Großer Holztisch",
     "anbieter_id": 1,
     "preis_vorschlag": 120,
