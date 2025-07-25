@@ -1,0 +1,27 @@
+<h3>HTTP REST Response von /artikel</h3>
+<h4>Einfachster HTTP Request</h4>
+
+
+<h2>http get Quick & dirty: </h2>
+
+<pre ngNonBindable>
+  async ladeDaten() &#123;
+    const result = await firstValueFrom(
+      this.http.get('http://localhost:3000/artikel')
+    );
+    this.artikelListe = result;
+  &#125;
+</pre>
+<h1>Wir nutzen zur anzeige der Variablen im Modul hier Interpolation </h1>
+<h2 ngNonBindable>{{artikelListe}} --></h2>
+<div>
+    <p>
+        {{artikelListe}}
+    </p>
+    <h2 ngNonBindable>{{deepTypeOf(artikelListe)}} --> </h2>
+    <p>{{deepTypeOf(artikelListe)}}</p>
+</div>
+<h2 ngNonBindable>{{artikelListe | json}}  --> </h2>
+<pre>
+{{artikelListe | json}}
+</pre>

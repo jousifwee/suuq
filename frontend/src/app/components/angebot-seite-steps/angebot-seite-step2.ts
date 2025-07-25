@@ -1,0 +1,53 @@
+import { Component, inject, signal } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { firstValueFrom } from 'rxjs';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+@Component({
+  selector: 'app-angebot-seite-step2',
+  imports: [CommonModule, FormsModule, MatSlideToggleModule],
+  templateUrl: './angebot-seite-step2.html',
+  styles: ''
+})
+export class AngebotSeiteStep2 {
+  private http = inject(HttpClient);
+  artikelListe = "";
+
+  constructor() {
+    this.ladeDaten();
+  }
+
+  async ladeDaten() {
+    const result = await firstValueFrom(
+      this.http.get('http://localhost:3000/artikel', { responseType: 'text' })
+    );
+    this.artikelListe = result;
+  }
+
+    typeOf(obj: any): string {
+    // Für Arrays gibt typeof "object" zurück, daher extra prüfen!
+    if (Array.isArray(obj)) {
+      return 'array';
+    }
+    return typeof obj;
+  }
+
+   deepTypeOf(obj: any): any {
+    if (obj === null) return 'null';
+    if (Array.isArray(obj)) {
+      if (obj.length === 0) return 'array(empty)';
+      return `array(${this.deepTypeOf(obj[0])})`;
+    }
+    if (typeof obj === 'object') {
+      const result: any = {};
+      for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          result[key] = this.deepTypeOf(obj[key]);
+        }
+      }
+      return result;
+    }
+    return typeof obj;
+  }
+}

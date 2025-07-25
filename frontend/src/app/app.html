@@ -1,22 +1,21 @@
 <!-- Creates a layout with a left-positioned sidenav and explicit content. -->
 <mat-sidenav-container>
-  <mat-sidenav #left mode="side" opened>
+  <mat-sidenav   mode="side" role="navigation" opened>
     <mat-toolbar color="primary" class="sidenav-toolbar" style="justify-content: center;">
       <mat-icon>menu</mat-icon>&nbsp;Angular Material Sidenav
     </mat-toolbar>
     <mat-nav-list>
-      <div style="display: flex; flex-direction: column; padding: 1rem; gap: 0.5rem;">
-        <a mat-button routerLinkActive="active-button" [routerLinkActiveOptions]="{ exact: true }"
-          routerLink="/home">Home</a>
-       <a mat-button routerLinkActive="active-button" [routerLinkActiveOptions]="{ exact: true }"
-          routerLink="/step1">Step 1</a>
-      </div>
+      <a mat-list-item routerLinkActive="active-button" [routerLinkActiveOptions]="{ exact: true }"
+        routerLink="/home">Die Marktseite</a>
+      <a mat-list-item routerLinkActive="active-button" [routerLinkActiveOptions]="{ exact: true }"
+        routerLink="/step1">Schritt 1 - nur ein Request - anzeige als JSON</a>
+      <a mat-list-item routerLinkActive="active-button" [routerLinkActiveOptions]="{ exact: true }"
+        routerLink="/step2">Schritt 2 - nur ein Request - response als String</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <h1>Welcome to the Angular App</h1>
-    <p>This is the main content area.</p>
-    <p>Use the sidenav to navigate through the app.</p>
+    <h1>مرحبا بكم في السوق</h1>
+    <p>ًWillkommen auf dem  Markt</p>
     <router-outlet />
   </mat-sidenav-content>
 
