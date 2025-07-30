@@ -1,0 +1,97 @@
+{
+  "realm": "suuq",
+  "enabled": true,
+  "users": [
+    {
+      "username": "user1",
+      "enabled": true,
+      "email": "u1@test.local",
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "pw1"
+        }
+      ],
+      "realmRoles": [
+        "admin"
+      ]
+    },
+    {
+      "username": "user2",
+      "enabled": true,
+      "email": "u2@test.local",
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "pw2"
+        }
+      ],
+      "realmRoles": [
+        "anwender"
+      ],
+      "groups": [
+        "angugger"
+      ]
+    },
+    {
+      "username": "user3",
+      "enabled": true,
+      "email": "u3@test.local",
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "pw3"
+        }
+      ],
+      "realmRoles": [
+        "anwender"
+      ],
+      "groups": [
+        "angugger",
+        "bieter"
+      ]
+    }
+  ],
+  "roles": {
+    "realm": [
+      {
+        "name": "admin"
+      },
+      {
+        "name": "anwender"
+      }
+    ]
+  },
+  "groups": [
+    {
+      "name": "angugger"
+    },
+    {
+      "name": "bieter"
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "suuq-angular-frontend-app",
+      "name": "Suuq Angular Frontend App",
+      "enabled": true,
+      "publicClient": true,
+      "redirectUris": [
+        "http://localhost:4200/*"
+      ],
+      "webOrigins": [
+        "http://localhost:4200"
+      ],
+      "protocol": "openid-connect",
+      "directAccessGrantsEnabled": true,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": false,
+      "authorizationServicesEnabled": false,
+      "fullScopeAllowed": true
+    }
+  ]
+}

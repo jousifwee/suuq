@@ -16,6 +16,21 @@
       <a mat-list-item routerLinkActive="active-button" [routerLinkActiveOptions]="{ exact: true }"
         routerLink="/step4">Schritt 4 - Asynchron Handling (Formular-Output)</a>
     </mat-nav-list>
+     <div class="spacer"></div>
+
+    <!-- User + Logout unten -->
+    <div class="user-section">
+      <mat-list dense>
+        <mat-list-item>
+          <span matLine>{{ username }}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-flat-button color="warn" (click)="logout()">
+            Logout
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <h1>مرحبا بكم في السوق</h1>

@@ -31,6 +31,28 @@ services:
       PGRST_DB_ANON_ROLE: web_anon
       PGRST_OPENAPI_MODE: ignore-privileges
       PGRST_LOG_LEVEL: debug
+      PGRST_JWT_SECRET: |
+        -----BEGIN PUBLIC KEY-----
+        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr7v1v6...MIIClzCCAX8CBgGYWg4gVDANBgkqhkiG9w0BAQsFADAPMQ0wCwYDVQQDDARzdXVxMB4XDTI1MDczMDA2MzcxMVoXDTM1MDczMDA2Mzg1MVowDzENMAsGA1UEAwwEc3V1cTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJB+ebndOtMocDG7cXnpJncVa74pHeOlttkRQLLT2gTGXYz+X0oZjG0mCVjHezbOQAQ9XwWyUzXFRZbniUdHNBpby8aWpxNsbtdAAN/R9qq8vMEoHpO9j43t74vvOUhOzMyfKz+R4puoLQxcC3Xu9dTozUze6oucY7aU72jOgP6wi23uyVZ+Rhn5Apcn6Kw/LxShZcPTg2eS9M6qHmp8JafWcdbpwKu4CsNFke63eZaVuPLwYoXt1LsGcU6t6HhwVwfQN5rdyL0Dd8hdBm+YWtXP61GJR0Hd85A4M+wFMnpUUZhM/NyQAiaU7h1UldkdhY4cF2JjpYc/FT/fRbcoo/cCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAU34Go4fUFuL+UtOPn1A3OWnJaR+ONvmYecdMbsGS4yPy71BLrmo6nUdMj9ZDUz1ZbgK5jOoeNsPQHQ4ESD/Qlas5tMGcizPXBLXpPSMD7n8eU2B/djz5SEnzhqbJm0AFiZOSIDKO+EIOcZgIkq1UwWW6dMUZHjIhILr7yR4Dk8yFWN/Ma3bnydXJYpk4j1IfD45gAHmLWwcMOdXSkb26qhFwFbTzjFe+RQmsNbpn0pq+OLw2kaSCHgB7WL7xU/4dfh5GMMnZCYb5tyg14H3tWGuUoCtqUJe3U2tMvJy6DpxldB4yCLk338ML7ysjt4wqLaJ05iGqHvQ82TW4KkPK8w==
+        -----END PUBLIC KEY-----
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.2.5
+    command: start-dev --import-realm
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+
+      KC_EMAIL_HOST: itz7 
+      KC_EMAIL_PORT: 25
+      KC_EMAIL_FROM: "nico.wulff@itz-rostock.de"
+      KC_EMAIL_FROM_DISPLAY_NAME: "Suuq Plattform"
+      KC_EMAIL_STARTTLS: false
+      KC_EMAIL_SSL: false
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./keycloak-realm.json:/opt/keycloak/data/import/realm.json
+      - ./keycloak-h2-data:/opt/keycloak/data/h2/
   swagger-ui:
     image: swaggerapi/swagger-ui
     container_name: swagger-ui

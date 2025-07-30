@@ -1,8 +1,12 @@
-Aufruf	Ergebnis
-GET /	OpenAPI JSON (bei ignore-privileges) ✅
-GET /openapi	404 Not Found (nur in follow-privileges verfügbar) ❌
+
+
+### die Keycloak Zertifikate aufrufen
+http://localhost:8080/realms/suuq/protocol/openid-connect/certs
 
 ### OpenAPI Doku abrufen (Root-URL, weil openapi-mode=ignore-privileges)
+# Aufruf	Ergebnis
+# GET /	OpenAPI JSON (bei ignore-privileges) ✅
+# GET /openapi	404 Not Found (nur in follow-privileges verfügbar) ❌
 ###### 
 GET http://localhost:3000/ 
 Accept: application/openapi+json

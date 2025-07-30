@@ -329,3 +329,33 @@ Es generiert automatisch eine vollständige REST-API aus den Tabellen, Views und
 - Versionierung der API
 - Fehlerbehandlung und Monitoring
 
+
+
+# jwt aktivieren
+
+## keycloak installieren und konfigurieren
+
+## keycloak in der App integrieren
+
+## token validiereung im postgrest aktivieren
+{code: "PGRST300", details: null, hint: null, message: "Server lacks JWT secret"}
+
+PGRST_JWT_SECRET: |
+        -----BEGIN PUBLIC KEY-----
+        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr7v1v6...
+        -----END PUBLIC KEY-----
+
+
+{code: "PGRST301", details: null, hint: null, message: "No suitable key or wrong key type"}
+code
+: 
+"PGRST301"
+details
+: 
+null
+hint
+: 
+null
+message
+: 
+"No suitable key or wrong key type"
