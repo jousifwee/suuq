@@ -1,0 +1,43 @@
+.token-info {
+  margin-top: 14px;
+}
+.token-info div {
+  font-size: 13px;
+}
+
+
+mat-sidenav-container {
+  min-height: 700px;
+  height: 100vh;    /* optional: sorgt für volle Ausdehnung */
+  display: flex;    /* wichtig für flexbox layout! */
+}
+mat-sidenav {
+  display: flex;
+  flex-direction: column;
+  width: 400px;       /* oder 320px, 220px, je nach Geschmack */
+  min-width: 220px;   /* optional, falls nötig */
+  max-width: 500px;   /* optional, für Responsive-Design */
+
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.user-section {
+  margin: 16px 0 8px 0;
+}
+
+.user-section {
+  padding: 16px 8px 8px 8px;
+  margin-top: auto;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+.user-info mat-icon {
+  font-size: 32px;
+  height: 32px;
+  width: 32px;
+}

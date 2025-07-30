@@ -8,12 +8,24 @@
         "providerId": "rsa",
         "subComponents": {},
         "config": {
-          "priority": ["100"],
-          "enabled": ["true"],
-          "active": ["true"],
-          "algorithm": ["RS256"],
-          "privateKey": ["MIIEowIBAAKCAQEAslFWDevU3Q49SFSdsreKo0DuYFRzWX2BO1MNhA239sBr2wBaUtOLHPkdFRt4iah3hpvoAwz8YHZTJjnHd3pyZkRbf5vN642E/LrsX5fwdC1WtH6s4jwrexZJIQW4UNcHlujrOuYealakpCJYD/7Ifd9pmdo7hqaZcWotw+VCD1k7gaXyLKHnTZl6xsBR8FYN/SHBlkhWMKla+ZWpsFLRsq3yZGF7FlPdyfp5Zjz8cuBDtDelD8E7KUlIBMyLRwKs9lfnTxlDRWv3d1tnhcZJ2B9PiKE4YKjcvO98C70bWTMGJUoT52258EjaZkcJ8GBg5FjqrYhGuddTJ7yAHEdSNwIDAQABAoIBAFw37j4y2Zoc9BqFEC1N+JfnS6Br7F+6pWvtzs6dXadx6hWPgCbXmlk4iA7TbyoaAv6NgJabT6X/a48YUIz8uU8kSQGcrQkF3mHptbbWWBdtHysnW/eAUKhOZTF7yM+d9SHZgVWrjs1F083CqTJUfJGEShO0JhbD8BUUaWinFtviVzaS4pJERafYDUEa/FrF+DciFEl6pt7RH3aZCrT5WpPtUxTsuBDpaZB3fy2XmKhjuKUGq5KFL6stzuwVPrmlE8OAdNUQABZuV3MwjAYCtu9MO5rFcSzUCJBOGj9gSMR49x1UO3l1Y9quhyJoKwYJ9QjWVJAx083ohNlEfaaTvEkCgYEA6JsF71gaCDSkPdrFDrvmMda7Hc2tgGspJIOYTkB3mayvN9d6ydTDeHgBsr0m/xbs6vcQduchv+keGZ6itksPjSveq+/74pBoEKt25GQ4oHOj/VKqlggkCJYcjMRNhavoXI9x4tiQhQYA8c+9oKn6ikce+Lej7I4ixhGAvS+UXssCgYEAxECLgMkx0ZOQPG/tHKe73DO81WGShC+fgtFwlhJ50u30OOAfpLppTfGrElHucmdFGh4K+tF55ycUuZE5C6eqTQXFnV7C0k+tsq7btB/VTdUude/z3r8ctnMyW39XK/T1UInkiuXfvgE/SrBzDuB/exgEAy2EqySQqQUnM8ijIMUCgYB4p+lVNOMT/JJxj2iGcws+MP+Qvx7PrUaDLUu005X2fe/JzJlh1l6qv71JxPpUecTdQNkmhFAqZzb43SPT4W2osefoUizbYkLI2thqMl55RGL9RYM9He3rEkqu7ii0PO7kDHhrziBxECMvS642h9VxIuE67K84RqZdDbk06VhSLwKBgQCQzmNg+pOU5UIHJjsZ6rYWC+Lou58lhBI5r5pYUXesaMHMeas/nAB5b7lfwi6kIYj+dW56lbhSFCcZqYsjC2sAfCLNNI+iKQKslpMsPFTioksu4IfcMr3X7fYZR0Ol/pBIBgcpaeaGx1rRHJM5RfMqe5TyV1LOCSPoYxIDBqc/VQKBgChFKPRYCImRTNUBwfBSbo8RNmzJIomkMNOeFgLdRvpa+fhRgcPI6GfIjNQnGBUb3zYItqH5iwnSnC1ZXm3+zVt/8TsbFfldKQkl0bBYL50V8gxOay+Ehhc+S7H4O1HCe5QdSDTBXdwt6CxUUEaT5iZXV6MytEzssXF7zjduTA3Y"],
-          "certificate": ["MIICpTCCAY0CFDjMEPL2gH6B/XxSEFNQ4xckhTwkMA0GCSqGSIb3DQEBCwUAMA8xDTALBgNVBAMMBHN1dXEwHhcNMjUwNzMwMTEwMDMzWhcNMjYwNzMwMTEwMDMzWjAPMQ0wCwYDVQQDDARzdXVxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAslFWDevU3Q49SFSdsreKo0DuYFRzWX2BO1MNhA239sBr2wBaUtOLHPkdFRt4iah3hpvoAwz8YHZTJjnHd3pyZkRbf5vN642E/LrsX5fwdC1WtH6s4jwrexZJIQW4UNcHlujrOuYealakpCJYD/7Ifd9pmdo7hqaZcWotw+VCD1k7gaXyLKHnTZl6xsBR8FYN/SHBlkhWMKla+ZWpsFLRsq3yZGF7FlPdyfp5Zjz8cuBDtDelD8E7KUlIBMyLRwKs9lfnTxlDRWv3d1tnhcZJ2B9PiKE4YKjcvO98C70bWTMGJUoT52258EjaZkcJ8GBg5FjqrYhGuddTJ7yAHEdSNwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBZd/cXWJqEEyQqYZQWJCn7Wqd7RSIFP5UlDc9l8a1Gs8fURm8snfC8lYkQtYA6YH+f200BCPXnMT1ApVLio58tdE9446klXQ40BZUNC47lgDpBuIudjF/7foOI5UnIdLNeie3U0aqL5CW1Ap3upVrP4B8Mz4R4Z0wQjBqGS18hZvzxJMU7cAbDS6zyiNGLydekJIi+EzKFxU6J+xu+utjSMQThSzgGoR1nNyf1vq5r7XA01As/reLjLcYAA9vXwqLfFcNXSBXJQkdRm+Tgp9v1b2emJUlwW70seGJnYLOGXV+a97u3VfhakW2eMoj3o4co8t1Jqyz6xIsZMI9AvuA+"]
+          "priority": [
+            "100"
+          ],
+          "enabled": [
+            "true"
+          ],
+          "active": [
+            "true"
+          ],
+          "algorithm": [
+            "RS256"
+          ],
+          "privateKey": [
+            "MIIEowIBAAKCAQEAslFWDevU3Q49SFSdsreKo0DuYFRzWX2BO1MNhA239sBr2wBaUtOLHPkdFRt4iah3hpvoAwz8YHZTJjnHd3pyZkRbf5vN642E/LrsX5fwdC1WtH6s4jwrexZJIQW4UNcHlujrOuYealakpCJYD/7Ifd9pmdo7hqaZcWotw+VCD1k7gaXyLKHnTZl6xsBR8FYN/SHBlkhWMKla+ZWpsFLRsq3yZGF7FlPdyfp5Zjz8cuBDtDelD8E7KUlIBMyLRwKs9lfnTxlDRWv3d1tnhcZJ2B9PiKE4YKjcvO98C70bWTMGJUoT52258EjaZkcJ8GBg5FjqrYhGuddTJ7yAHEdSNwIDAQABAoIBAFw37j4y2Zoc9BqFEC1N+JfnS6Br7F+6pWvtzs6dXadx6hWPgCbXmlk4iA7TbyoaAv6NgJabT6X/a48YUIz8uU8kSQGcrQkF3mHptbbWWBdtHysnW/eAUKhOZTF7yM+d9SHZgVWrjs1F083CqTJUfJGEShO0JhbD8BUUaWinFtviVzaS4pJERafYDUEa/FrF+DciFEl6pt7RH3aZCrT5WpPtUxTsuBDpaZB3fy2XmKhjuKUGq5KFL6stzuwVPrmlE8OAdNUQABZuV3MwjAYCtu9MO5rFcSzUCJBOGj9gSMR49x1UO3l1Y9quhyJoKwYJ9QjWVJAx083ohNlEfaaTvEkCgYEA6JsF71gaCDSkPdrFDrvmMda7Hc2tgGspJIOYTkB3mayvN9d6ydTDeHgBsr0m/xbs6vcQduchv+keGZ6itksPjSveq+/74pBoEKt25GQ4oHOj/VKqlggkCJYcjMRNhavoXI9x4tiQhQYA8c+9oKn6ikce+Lej7I4ixhGAvS+UXssCgYEAxECLgMkx0ZOQPG/tHKe73DO81WGShC+fgtFwlhJ50u30OOAfpLppTfGrElHucmdFGh4K+tF55ycUuZE5C6eqTQXFnV7C0k+tsq7btB/VTdUude/z3r8ctnMyW39XK/T1UInkiuXfvgE/SrBzDuB/exgEAy2EqySQqQUnM8ijIMUCgYB4p+lVNOMT/JJxj2iGcws+MP+Qvx7PrUaDLUu005X2fe/JzJlh1l6qv71JxPpUecTdQNkmhFAqZzb43SPT4W2osefoUizbYkLI2thqMl55RGL9RYM9He3rEkqu7ii0PO7kDHhrziBxECMvS642h9VxIuE67K84RqZdDbk06VhSLwKBgQCQzmNg+pOU5UIHJjsZ6rYWC+Lou58lhBI5r5pYUXesaMHMeas/nAB5b7lfwi6kIYj+dW56lbhSFCcZqYsjC2sAfCLNNI+iKQKslpMsPFTioksu4IfcMr3X7fYZR0Ol/pBIBgcpaeaGx1rRHJM5RfMqe5TyV1LOCSPoYxIDBqc/VQKBgChFKPRYCImRTNUBwfBSbo8RNmzJIomkMNOeFgLdRvpa+fhRgcPI6GfIjNQnGBUb3zYItqH5iwnSnC1ZXm3+zVt/8TsbFfldKQkl0bBYL50V8gxOay+Ehhc+S7H4O1HCe5QdSDTBXdwt6CxUUEaT5iZXV6MytEzssXF7zjduTA3Y"
+          ],
+          "certificate": [
+            "MIICpTCCAY0CFDjMEPL2gH6B/XxSEFNQ4xckhTwkMA0GCSqGSIb3DQEBCwUAMA8xDTALBgNVBAMMBHN1dXEwHhcNMjUwNzMwMTEwMDMzWhcNMjYwNzMwMTEwMDMzWjAPMQ0wCwYDVQQDDARzdXVxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAslFWDevU3Q49SFSdsreKo0DuYFRzWX2BO1MNhA239sBr2wBaUtOLHPkdFRt4iah3hpvoAwz8YHZTJjnHd3pyZkRbf5vN642E/LrsX5fwdC1WtH6s4jwrexZJIQW4UNcHlujrOuYealakpCJYD/7Ifd9pmdo7hqaZcWotw+VCD1k7gaXyLKHnTZl6xsBR8FYN/SHBlkhWMKla+ZWpsFLRsq3yZGF7FlPdyfp5Zjz8cuBDtDelD8E7KUlIBMyLRwKs9lfnTxlDRWv3d1tnhcZJ2B9PiKE4YKjcvO98C70bWTMGJUoT52258EjaZkcJ8GBg5FjqrYhGuddTJ7yAHEdSNwIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQBZd/cXWJqEEyQqYZQWJCn7Wqd7RSIFP5UlDc9l8a1Gs8fURm8snfC8lYkQtYA6YH+f200BCPXnMT1ApVLio58tdE9446klXQ40BZUNC47lgDpBuIudjF/7foOI5UnIdLNeie3U0aqL5CW1Ap3upVrP4B8Mz4R4Z0wQjBqGS18hZvzxJMU7cAbDS6zyiNGLydekJIi+EzKFxU6J+xu+utjSMQThSzgGoR1nNyf1vq5r7XA01As/reLjLcYAA9vXwqLfFcNXSBXJQkdRm+Tgp9v1b2emJUlwW70seGJnYLOGXV+a97u3VfhakW2eMoj3o4co8t1Jqyz6xIsZMI9AvuA+"
+          ]
         }
       }
     ]
@@ -114,7 +126,24 @@
       "implicitFlowEnabled": false,
       "serviceAccountsEnabled": false,
       "authorizationServicesEnabled": false,
-      "fullScopeAllowed": true
+      "fullScopeAllowed": true,
+      "protocolMappers": [
+        {
+          "name": "groups",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-group-membership-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "",
+            "claim.name": "groups",
+            "jsonType.label": "String",
+            "full.path": "false",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true"
+          }
+        }
+      ]
     }
   ]
 }
