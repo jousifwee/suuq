@@ -17,6 +17,7 @@ begin
 end
 $$;
 
+
 -- Tabelle artikel
 create table artikel (
     id serial primary key,
@@ -84,22 +85,22 @@ group by a.id;
 
 -- Rechte für PostgREST
 -- Schema-Rechte
-GRANT USAGE ON SCHEMA suuq TO web_anon;
+GRANT USAGE ON SCHEMA suuq TO web_anon, postgres;
 
 -- Bestehende Objekte
-GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA suuq TO web_anon;
-GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA suuq TO web_anon;
-GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA suuq TO web_anon;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA suuq TO web_anon, postgres;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA suuq TO web_anon, postgres;
+GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA suuq TO web_anon, postgres;
 
 -- Default-Rechte für zukünftige Objekte
 ALTER DEFAULT PRIVILEGES IN SCHEMA suuq
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO web_anon;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO web_anon, postgres;
 
 ALTER DEFAULT PRIVILEGES IN SCHEMA suuq
-GRANT USAGE, SELECT ON SEQUENCES TO web_anon;
+GRANT USAGE, SELECT ON SEQUENCES TO web_anon, postgres;
 
 ALTER DEFAULT PRIVILEGES IN SCHEMA suuq
-GRANT EXECUTE ON FUNCTIONS TO web_anon;
+GRANT EXECUTE ON FUNCTIONS TO web_anon, postgres;
 
 
 ALTER ROLE postgres SET search_path TO suuq, public;

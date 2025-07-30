@@ -24,10 +24,11 @@ export class AngebotSeiteStep4 {
 
 
   ladeDaten() {
-    this.http.get<any[]>('http://localhost:3000/artikel').subscribe(data => {
-      this.artikelListe = data;
+    this.http.get<any[]>('http://localhost:3000/artikel').subscribe({
+      next: (daten) => this.artikelListe = daten,
+      error: err => alert(err.error.message),
+      complete: () => { console.log('Daten geladen'); }
     });
-  
   }
 
 }

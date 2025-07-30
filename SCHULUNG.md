@@ -359,3 +359,15 @@ null
 message
 : 
 "No suitable key or wrong key type"
+
+
+
+### nach entfernen der ANON Zugriffseinstellung
+
+{
+    "code": "22023",
+    "details": null,
+    "hint": null,
+    "message": "role \"anwender\" does not exist"
+}
+
