@@ -11,8 +11,8 @@ BEGIN
     IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = 'admin') THEN
         CREATE ROLE admin;
     END IF;
-END
-$$
+END;
+$$ LANGUAGE plpgsql;
 
 -- Ich werde SQL-Befehle erstellen, um:
 -- 1. Den Suchpfad für beide Rollen auf das Schema 'suuq' zu setzen
@@ -20,6 +20,7 @@ $$
 -- 3. Der Rolle 'anwender' Leserechte auf alle Tabellen, Prozeduren und Sequenzen zu geben
 -- 4. Der Rolle 'admin' Insert-, Update- und Delete-Rechte auf alle Tabellen, Prozeduren und Sequenzen zu geben
 -- Suchpfad für beide Rollen auf 'suuq' setzen
+
 ALTER ROLE anwender SET search_path TO suuq;
 ALTER ROLE admin SET search_path TO suuq;
 
